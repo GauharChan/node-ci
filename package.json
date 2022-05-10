@@ -1,0 +1,13 @@
+{
+  "name": "node-ci",
+  "author": "gauhar chan",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "serve": "nodemon server.js"
+  },
+  "dependencies": {
+    "json2xls": "^0.1.2",
+    "nodemon": "^2.0.15"
+  }
+}
