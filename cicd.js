@@ -37,7 +37,7 @@ const configList = []
 child_process.exec(`rm -rf ./${newDirName}`, () => {
   fs.mkdir(`./${newDirName}`, () => {
     const groups = [... new Set(data.map(item => item.群组名))]
-    // 生成文件夹
+    // 按群组生成文件夹
     groups.forEach(item => fs.mkdirSync(`./${newDirName}/${item}`))
     
     data.forEach(item => {
@@ -54,7 +54,7 @@ child_process.exec(`rm -rf ./${newDirName}`, () => {
     toExcel(configList)
   });
 });
-
+// 生成对应配置文件网络路径的excel
 function toExcel(data) {
   const xls = json2xls(data);
   fs.writeFileSync(`./CICD配置网址.xlsx`, xls, "binary");
